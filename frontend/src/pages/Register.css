@@ -1,0 +1,832 @@
+/* Register Page - Clean Minimalist Style (Matching Login.css) */
+
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  position: relative;
+  overflow: hidden;
+  animation: containerFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes containerFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Animated gradient background overlay */
+.register-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(139, 92, 246, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.08) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  animation: gridSlide 15s linear infinite;
+}
+
+@keyframes gridSlide {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 80px 80px;
+  }
+}
+
+/* Floating animated blobs */
+.register-container::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0) 70%);
+  border-radius: 50%;
+  top: -150px;
+  right: -100px;
+  pointer-events: none;
+  animation: registerFloatBlob1 12s ease-in-out infinite;
+  display: block;
+}
+
+@keyframes registerFloatBlob1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate(-50px, 80px) scale(1.2);
+    opacity: 0.5;
+  }
+  66% {
+    transform: translate(30px, 150px) scale(0.9);
+    opacity: 0.4;
+  }
+}
+
+/* Second floating blob */
+.register-container .blob-secondary {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.12) 0%, rgba(167, 139, 250, 0) 70%);
+  border-radius: 50%;
+  bottom: -100px;
+  left: -80px;
+  pointer-events: none;
+  animation: registerFloatBlob2 15s ease-in-out infinite;
+}
+
+@keyframes registerFloatBlob2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(60px, -60px) scale(1.1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(120px, -20px) scale(0.8);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(80px, 40px) scale(1.15);
+    opacity: 0.45;
+  }
+}
+
+/* Clean and solid card design matching login */
+.register-card {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 
+    0 20px 35px -10px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(139, 92, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: cardSlideUp 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+@keyframes cardSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.register-card:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 
+    0 30px 45px -15px rgba(139, 92, 246, 0.3),
+    0 0 0 2px rgba(139, 92, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-8px) scale(1.01);
+}
+
+/* Card shine effect */
+.register-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+  border-radius: 24px;
+  display: block;
+}
+
+.register-card:hover::before {
+  left: 100%;
+}
+
+/* Remove any other pseudo-element animations */
+.register-card::after {
+  display: none;
+}
+
+/* Clean header section with bold black text */
+.register-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: headerFadeIn 0.6s ease-out 0.2s both;
+}
+
+@keyframes headerFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #000000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: inline-block;
+}
+
+.register-header h2:hover {
+  transform: scale(1.03);
+  letter-spacing: -0.2px;
+}
+
+.register-header p {
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: normal;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+/* Form groups with clean styling and animation */
+.register-form .form-group {
+  margin-bottom: 1.8rem;
+  position: relative;
+  opacity: 0;
+  animation: slideInFromLeft 0.5s ease forwards;
+}
+
+.register-form .form-group:nth-child(1) { animation-delay: 0.1s; }
+.register-form .form-group:nth-child(2) { animation-delay: 0.15s; }
+.register-form .form-group:nth-child(3) { animation-delay: 0.2s; }
+.register-form .form-group:nth-child(4) { animation-delay: 0.25s; }
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Labels remain BLACK at all times */
+.register-form label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  color: #000000 !important;
+  font-size: 0.85rem;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  transform-origin: left;
+}
+
+/* No color change on focus - stays black */
+.form-group:focus-within label {
+  color: #000000 !important;
+}
+
+/* Clean, solid inputs with black border */
+.register-form input {
+  width: 100%;
+  padding: 0.9rem 0.8rem;
+  border: 2px solid #000000;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  background: #ffffff;
+  color: #000000;
+  letter-spacing: normal;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.register-form input::placeholder {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: #000000;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  transform: translateX(4px);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.register-form input:focus::placeholder {
+  opacity: 0.6;
+}
+
+/* Input hover effect */
+.register-form input:hover {
+  border-color: #333333;
+  transform: translateX(2px);
+}
+
+/* Solid autofill style */
+.register-form input:-webkit-autofill,
+.register-form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  font-weight: 600;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  border-color: #000000;
+}
+
+/* Password input container */
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-container input {
+  padding-right: 3rem; /* Make room for the button */
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 0.2rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+.password-toggle-btn:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.password-toggle-btn:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+/* Clean, solid button matching login */
+.register-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 15px rgba(139, 92, 246, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+  animation: buttonFadeIn 0.5s ease 0.3s both;
+}
+
+@keyframes buttonFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.register-btn:active::before {
+  width: 400px;
+  height: 400px;
+}
+
+.register-btn:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  box-shadow: 
+    0 12px 30px rgba(139, 92, 246, 0.45),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.register-btn:active:not(:disabled) {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.register-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  animation: none;
+}
+
+/* Loading state */
+.register-btn.loading {
+  pointer-events: none;
+  position: relative;
+}
+
+.register-btn.loading::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top-color: #ffffff;
+  border-right-color: #ffffff;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 0.8s linear infinite;
+  background: transparent;
+  z-index: 2;
+}
+
+.register-btn.loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(124, 58, 237, 0.8));
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Clean error message */
+.register-error {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #dc2626;
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #fecaca;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: errorShake 0.5s ease-out;
+}
+
+@keyframes errorShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-3px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(3px);
+  }
+}
+
+.register-error:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.15);
+}
+
+/* Clean footer */
+.register-footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(139, 92, 246, 0.15);
+  position: relative;
+  animation: footerFadeIn 0.6s ease-out 0.4s both;
+}
+
+@keyframes footerFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-footer p {
+  color: #374151;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: normal;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.register-footer p:hover {
+  color: #000000;
+  transform: translateY(-1px);
+}
+
+.register-footer a {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: normal;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: inline-block;
+  margin: 0 0.3rem;
+  padding: 0 2px;
+}
+
+.register-footer a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #8b5cf6, #c084fc);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.register-footer a:hover {
+  color: #6d28d9;
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
+}
+
+.register-footer a:hover::before {
+  width: 100%;
+}
+
+/* Success Message Styling */
+.success-content {
+  text-align: center;
+  animation: successFadeIn 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+@keyframes successFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+  animation: successPulse 2s ease-in-out infinite;
+}
+
+@keyframes successPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(16, 185, 129, 0.5);
+  }
+}
+
+.success-header {
+  margin-bottom: 1.5rem;
+}
+
+.success-header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #10b981;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.3px;
+  animation: headerSlideIn 0.6s ease-out 0.2s both;
+}
+
+.success-header p {
+  font-size: 0.9rem;
+  color: #374151;
+  font-weight: 600;
+  margin: 0;
+  animation: headerSlideIn 0.6s ease-out 0.3s both;
+}
+
+@keyframes headerSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-message {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dbeafe 100%);
+  padding: 1.5rem;
+  border-radius: 14px;
+  margin: 1.5rem 0;
+  border: 1px solid #bbf7d0;
+  animation: messageSlideIn 0.6s ease-out 0.4s both;
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-message p {
+  font-size: 0.95rem;
+  color: #059669;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  letter-spacing: normal;
+}
+
+.success-message p:first-child {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.user-name {
+  font-weight: 800;
+  color: #10b981;
+  text-decoration: underline;
+  text-decoration-color: rgba(16, 185, 129, 0.3);
+  text-underline-offset: 2px;
+}
+
+.redirect-text {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 0.75rem;
+}
+
+/* Success Button */
+.success-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
+  margin-top: 1.5rem;
+  animation: buttonSlideIn 0.6s ease-out 0.5s both;
+}
+
+.success-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.45) !important;
+}
+
+.success-btn:active:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+}
+
+@keyframes buttonSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 560px) {
+  .register-card {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    animation: cardSlideUpMobile 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+  }
+  
+  @keyframes cardSlideUpMobile {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.97);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .register-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .register-header p {
+    font-size: 0.85rem;
+  }
+  
+  .register-form .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .register-btn {
+    padding: 0.9rem;
+    font-size: 0.85rem;
+    margin-top: 1.25rem;
+  }
+  
+  .register-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+  }
+  
+  .register-form input:focus {
+    transform: translateX(2px);
+  }
+  
+  .register-card:hover {
+    transform: translateY(-4px) scale(1.005);
+  }
+  
+  /* Adjust blob animations for mobile */
+  .register-container::after {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    right: -80px;
+  }
+  
+  .register-container .blob-secondary {
+    width: 180px;
+    height: 180px;
+    bottom: -80px;
+    left: -60px;
+  }
+
+  /* Success content mobile adjustments */
+  .success-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .success-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .success-header p {
+    font-size: 0.85rem;
+  }
+
+  .success-message {
+    padding: 1.2rem;
+    margin: 1.2rem 0;
+  }
+
+  .success-message p {
+    font-size: 0.9rem;
+  }
+
+  .success-message p:first-child {
+    font-size: 1rem;
+  }
+}
+
+/* Focus visible outline for accessibility */
+*:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .register-container::before,
+  .register-container::after,
+  .register-container .blob-secondary,
+  .register-card,
+  .register-form .form-group,
+  .register-error,
+  .register-footer {
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .register-card:hover {
+    transform: none;
+  }
+  
+  .register-card::before {
+    display: none;
+  }
+}

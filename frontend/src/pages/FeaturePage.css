@@ -1,0 +1,133 @@
+.feature-page {
+  padding: 40px 0 80px;
+}
+
+.feature-hero {
+  position: relative;
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  color: #ffffff;
+  padding: 60px 0;
+  margin-bottom: 40px;
+}
+
+.feature-hero-content {
+  text-align: center;
+}
+
+.back-button {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+.feature-icon-large {
+  font-size: 3rem;
+  margin-bottom: 18px;
+}
+
+.feature-hero h1 {
+  font-size: clamp(2rem, 2.4vw, 3.5rem);
+  margin-bottom: 16px;
+}
+
+.feature-hero p {
+  font-size: 1.05rem;
+  margin: 0 auto 28px;
+  max-width: 760px;
+  line-height: 1.75;
+}
+
+.feature-cta {
+  display: inline-block;
+  background: #ffffff;
+  color: #7c3aed;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(124, 58, 237, 0.18);
+}
+
+.feature-details {
+  padding-bottom: 20px;
+}
+
+.feature-details h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+.feature-details p {
+  font-size: 1rem;
+  margin-bottom: 32px;
+  color: #4b5563;
+  line-height: 1.75;
+  max-width: 820px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.feature-box {
+  background: #ffffff;
+  border: 1px solid rgba(156, 163, 175, 0.24);
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.05);
+}
+
+.feature-box h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.feature-box p {
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .feature-page {
+    padding: 30px 0 60px;
+  }
+
+  .feature-hero {
+    padding: 40px 0;
+  }
+
+  .feature-hero h1 {
+    font-size: 2.4rem;
+  }
+}
