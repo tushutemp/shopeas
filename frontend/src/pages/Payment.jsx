@@ -27,7 +27,7 @@ const Payment = () => {
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState({})
 
-  const API_URL = 'http://localhost:5000/api'
+  const API_URL = process.env.API_URL
 
   const handleCardChange = (e) => {
     let { name, value } = e.target
