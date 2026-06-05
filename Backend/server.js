@@ -18,7 +18,11 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['https://shopeas.vercel.app',]
+  origin: [
+    'https://shopeas.vercel.app',         // your main frontend
+    /\.vercel\.app$/                       // all vercel preview deployments
+  ],
+  credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
