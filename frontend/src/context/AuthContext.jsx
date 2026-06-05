@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const AuthContext = createContext()
 
-const API_URL = process.env.API_URL
+const API_URL = process.env.API_URL 
 
 export const useAuth = () => {
   const context = useContext(AuthContext)

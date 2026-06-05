@@ -52,7 +52,7 @@ const Register = () => {
       }
     } catch (err) {
       console.log('Registration error:', err)
-      setError(err.response?.data?.message || 'An error occurred. Please try again.')
+      setError(err.response?.data?.message)
     } finally {
       setLoading(false)
     }
